@@ -1,0 +1,343 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/GlobalFont64.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Circle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Square.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/CardSlot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/UIManager.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/TurnManager.tscn" type="PackedScene" id=6]
+
+[node name="GameScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="UIManager" type="Node" parent="." groups=["UIManager"]]
+script = ExtResource( 5 )
+discard_label_nodepath = NodePath("../VBox/BottomBar/HBox/LeftHBox/Discard/Discard/DiscardLabel")
+deck_label_nodepath = NodePath("../VBox/BottomBar/HBox/LeftHBox/Deck/DeckLabel")
+mana_label_nodepath = NodePath("../VBox/BottomBar/HBox/Mana/ManaLabel")
+
+[node name="TurnManager" parent="." instance=ExtResource( 6 )]
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GamePlay" type="TextureRect" parent="VBox"]
+self_modulate = Color( 0.313726, 0.313726, 0.313726, 1 )
+margin_right = 1920.0
+margin_bottom = 876.0
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="HBox" type="HBoxContainer" parent="VBox/GamePlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+
+[node name="Hand" type="Control" parent="VBox/GamePlay/HBox"]
+margin_right = 543.0
+margin_bottom = 816.0
+size_flags_horizontal = 3
+
+[node name="Panel" type="TextureRect" parent="VBox/GamePlay/HBox/Hand"]
+self_modulate = Color( 0.368627, 0.368627, 0.368627, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="CardSlots" type="VBoxContainer" parent="VBox/GamePlay/HBox"]
+margin_left = 547.0
+margin_right = 1313.0
+margin_bottom = 816.0
+
+[node name="Margin" type="MarginContainer" parent="VBox/GamePlay/HBox/CardSlots"]
+margin_right = 766.0
+margin_bottom = 21.0
+size_flags_vertical = 3
+
+[node name="CardGrid" type="GridContainer" parent="VBox/GamePlay/HBox/CardSlots"]
+margin_top = 25.0
+margin_right = 766.0
+margin_bottom = 791.0
+columns = 5
+
+[node name="CardSlot" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_right = 150.0
+margin_bottom = 150.0
+
+[node name="CardSlot2" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 150.0
+
+[node name="CardSlot3" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 150.0
+
+[node name="CardSlot4" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 462.0
+margin_right = 612.0
+margin_bottom = 150.0
+
+[node name="CardSlot5" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 616.0
+margin_right = 766.0
+margin_bottom = 150.0
+
+[node name="CardSlot6" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_top = 154.0
+margin_right = 150.0
+margin_bottom = 304.0
+
+[node name="CardSlot7" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 154.0
+margin_top = 154.0
+margin_right = 304.0
+margin_bottom = 304.0
+
+[node name="CardSlot8" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 308.0
+margin_top = 154.0
+margin_right = 458.0
+margin_bottom = 304.0
+
+[node name="CardSlot9" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 462.0
+margin_top = 154.0
+margin_right = 612.0
+margin_bottom = 304.0
+
+[node name="CardSlot10" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 616.0
+margin_top = 154.0
+margin_right = 766.0
+margin_bottom = 304.0
+
+[node name="CardSlot11" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_top = 308.0
+margin_right = 150.0
+margin_bottom = 458.0
+
+[node name="CardSlot12" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 154.0
+margin_top = 308.0
+margin_right = 304.0
+margin_bottom = 458.0
+
+[node name="CardSlot13" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 308.0
+margin_top = 308.0
+margin_right = 458.0
+margin_bottom = 458.0
+
+[node name="CardSlot14" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 462.0
+margin_top = 308.0
+margin_right = 612.0
+margin_bottom = 458.0
+
+[node name="CardSlot15" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 616.0
+margin_top = 308.0
+margin_right = 766.0
+margin_bottom = 458.0
+
+[node name="CardSlot16" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_top = 462.0
+margin_right = 150.0
+margin_bottom = 612.0
+
+[node name="CardSlot17" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 154.0
+margin_top = 462.0
+margin_right = 304.0
+margin_bottom = 612.0
+
+[node name="CardSlot18" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 308.0
+margin_top = 462.0
+margin_right = 458.0
+margin_bottom = 612.0
+
+[node name="CardSlot19" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 462.0
+margin_top = 462.0
+margin_right = 612.0
+margin_bottom = 612.0
+
+[node name="CardSlot20" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 616.0
+margin_top = 462.0
+margin_right = 766.0
+margin_bottom = 612.0
+
+[node name="CardSlot21" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_top = 616.0
+margin_right = 150.0
+margin_bottom = 766.0
+
+[node name="CardSlot22" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 154.0
+margin_top = 616.0
+margin_right = 304.0
+margin_bottom = 766.0
+
+[node name="CardSlot23" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 308.0
+margin_top = 616.0
+margin_right = 458.0
+margin_bottom = 766.0
+
+[node name="CardSlot24" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 462.0
+margin_top = 616.0
+margin_right = 612.0
+margin_bottom = 766.0
+
+[node name="CardSlot25" parent="VBox/GamePlay/HBox/CardSlots/CardGrid" instance=ExtResource( 4 )]
+margin_left = 616.0
+margin_top = 616.0
+margin_right = 766.0
+margin_bottom = 766.0
+
+[node name="Margin2" type="MarginContainer" parent="VBox/GamePlay/HBox/CardSlots"]
+margin_top = 795.0
+margin_right = 766.0
+margin_bottom = 816.0
+size_flags_vertical = 3
+
+[node name="Hand2" type="Control" parent="VBox/GamePlay/HBox"]
+margin_left = 1317.0
+margin_right = 1860.0
+margin_bottom = 816.0
+size_flags_horizontal = 3
+
+[node name="Panel" type="TextureRect" parent="VBox/GamePlay/HBox/Hand2"]
+self_modulate = Color( 0.368627, 0.368627, 0.368627, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="BottomBar" type="TextureRect" parent="VBox"]
+self_modulate = Color( 0.2, 0.2, 0.2, 1 )
+margin_top = 880.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 200 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="HBox" type="HBoxContainer" parent="VBox/BottomBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_constants/separation = 0
+
+[node name="LeftHBox" type="HBoxContainer" parent="VBox/BottomBar/HBox"]
+margin_right = 860.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+
+[node name="Deck" type="TextureRect" parent="VBox/BottomBar/HBox/LeftHBox"]
+self_modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="DeckLabel" type="Label" parent="VBox/BottomBar/HBox/LeftHBox/Deck"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+align = 1
+valign = 1
+
+[node name="Discard" type="VBoxContainer" parent="VBox/BottomBar/HBox/LeftHBox"]
+margin_left = 164.0
+margin_right = 264.0
+margin_bottom = 160.0
+
+[node name="Margin" type="MarginContainer" parent="VBox/BottomBar/HBox/LeftHBox/Discard"]
+margin_right = 100.0
+margin_bottom = 56.0
+size_flags_vertical = 3
+
+[node name="Discard" type="TextureRect" parent="VBox/BottomBar/HBox/LeftHBox/Discard"]
+self_modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+margin_top = 60.0
+margin_right = 100.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="DiscardLabel" type="Label" parent="VBox/BottomBar/HBox/LeftHBox/Discard/Discard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+align = 1
+valign = 1
+
+[node name="Mana" type="TextureRect" parent="VBox/BottomBar/HBox"]
+self_modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+margin_left = 860.0
+margin_right = 1020.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="ManaLabel" type="Label" parent="VBox/BottomBar/HBox/Mana"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+align = 1
+valign = 1
+
+[node name="RightHBox" type="HBoxContainer" parent="VBox/BottomBar/HBox"]
+margin_left = 1020.0
+margin_right = 1880.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox/BottomBar/HBox/RightHBox"]
+margin_right = 626.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+
+[node name="PassTurnButton" type="Button" parent="VBox/BottomBar/HBox/RightHBox"]
+margin_left = 630.0
+margin_right = 860.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 230, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "Pass Turn"
+icon_align = 1
+
+[connection signal="pressed" from="VBox/BottomBar/HBox/RightHBox/PassTurnButton" to="TurnManager" method="_on_PassTurnButton_pressed"]
