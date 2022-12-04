@@ -1,33 +1,96 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Resources/Fonts/GlobalFont64.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Circle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Egg.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Square.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/CardSlot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/TurnManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Fonts/AlumniSansPinstripe-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/PlacementManager.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 5
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "EggUpdate"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.07, 0.23, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -15.0, -20.0, -10.0, -15.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -15.0 ]
+}
 
 [node name="GameScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-mana_label_nodepath = NodePath("Mana/ManaLabel")
+mana_label_nodepath = NodePath("Eggs/EggLabel")
 
 [node name="TurnManager" parent="." instance=ExtResource( 6 )]
+egg_anim_nodepath = NodePath("../Eggs/EggAnim")
 
 [node name="PlacementManager" type="Node2D" parent="."]
 script = ExtResource( 11 )
 hand1_nodepath = NodePath("../GamePlay/HBox/Hand1/CanvasLayer/VBox")
 hand2_nodepath = NodePath("../GamePlay/HBox/Hand2/CanvasLayer/VBox")
 
-[node name="GamePlay" type="TextureRect" parent="."]
-self_modulate = Color( 0.490196, 0.384314, 0.384314, 1 )
+[node name="GamePlay" type="ColorRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 size_flags_vertical = 3
-texture = ExtResource( 3 )
-expand = true
+color = Color( 0.745098, 0.823529, 0.968627, 1 )
 
 [node name="HBox" type="HBoxContainer" parent="GamePlay"]
 anchor_left = 0.5
@@ -41,7 +104,7 @@ margin_bottom = 483.0
 custom_constants/separation = 30
 
 [node name="Hand1" type="TextureRect" parent="GamePlay/HBox"]
-self_modulate = Color( 0.368627, 0.368627, 0.368627, 1 )
+self_modulate = Color( 0.654902, 0.717647, 0.835294, 1 )
 margin_right = 200.0
 margin_bottom = 966.0
 rect_min_size = Vector2( 200, 966 )
@@ -235,7 +298,7 @@ margin_bottom = 966.0
 placement_id = Vector2( 5, 5 )
 
 [node name="Hand2" type="TextureRect" parent="GamePlay/HBox"]
-self_modulate = Color( 0.368627, 0.368627, 0.368627, 1 )
+self_modulate = Color( 0.654902, 0.717647, 0.835294, 1 )
 margin_left = 1226.0
 margin_right = 1426.0
 margin_bottom = 966.0
@@ -258,21 +321,27 @@ margin_right = 705.0
 margin_bottom = 473.0
 alignment = 1
 
-[node name="Mana" type="TextureRect" parent="."]
-self_modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+[node name="Eggs" type="TextureRect" parent="."]
 margin_right = 130.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 130, 0 )
+rect_rotation = -15.0
+rect_pivot_offset = Vector2( 65, 65 )
 texture = ExtResource( 2 )
 expand = true
 
-[node name="ManaLabel" type="Label" parent="Mana"]
+[node name="EggLabel" type="Label" parent="Eggs"]
+self_modulate = Color( 0.588235, 0.552941, 0.482353, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
 text = "1"
 align = 1
 valign = 1
+
+[node name="EggAnim" type="AnimationPlayer" parent="Eggs"]
+anims/EggUpdate = SubResource( 2 )
+anims/RESET = SubResource( 3 )
 
 [node name="PassTurnButton" type="Button" parent="."]
 anchor_left = 1.0

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-cost = 1
+eggs = 1
 health = 1
 attack_dictionary = {
 "Down": 1,

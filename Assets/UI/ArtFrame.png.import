@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DownShadow.png-4e27596359141b8cd61fd37ba45f1eb7.stex"
+path="res://.import/ArtFrame.png-b9a22738f396f9c07324c79ec5361ec4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/DownShadow.png"
-dest_files=[ "res://.import/DownShadow.png-4e27596359141b8cd61fd37ba45f1eb7.stex" ]
+source_file="res://Assets/UI/ArtFrame.png"
+dest_files=[ "res://.import/ArtFrame.png-b9a22738f396f9c07324c79ec5361ec4.stex" ]
 
 [params]
 

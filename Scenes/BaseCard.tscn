@@ -1,11 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Square.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Robot.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Left.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Down.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/AlumniSansPinstripe-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scripts/BaseCard.gd" type="Script" id=4]
+[ext_resource path="res://Assets/UI/Up.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Right.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Egg.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Heart.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Duck.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Duck.tres" type="Resource" id=11]
 
 [sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 25
 outline_size = 1
 use_mipmaps = true
@@ -21,49 +35,21 @@ rect_min_size = Vector2( 184, 184 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource( 4 )
+up_attack_label_nodepath = NodePath("Background/UpAttack/AttackLabel")
+down_attack_label_nodepath = NodePath("Background/DownAttack/AttackLabel")
+right_attack_label_nodepath = NodePath("Background/RightAttack/AttackLabel")
+left_attack_label_nodepath = NodePath("Background/LeftAttack/AttackLabel")
+health_label_nodepath = NodePath("Background/Inner/Health/HealthLabel")
+egg_label_nodepath = NodePath("Background/Inner/Eggs/EggLabel")
+card_resource = ExtResource( 11 )
 
-[node name="Border" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Frame" type="Control" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.0
-margin_top = -90.0
-margin_right = 90.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 180, 180 )
-rect_pivot_offset = Vector2( 90, 90 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Background" type="TextureRect" parent="Frame"]
-self_modulate = Color( 1, 0.662745, 0.184314, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 7 )
 expand = true
 
-[node name="CardArt" type="TextureRect" parent="Frame"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -70.0
-margin_top = -70.0
-margin_right = 70.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 140, 140 )
-texture = ExtResource( 2 )
-expand = true
-
-[node name="UpAttack" type="TextureRect" parent="Frame"]
-self_modulate = Color( 0.753906, 0.499423, 0.138412, 1 )
+[node name="UpAttack" type="TextureRect" parent="Background"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -30.0
@@ -71,10 +57,11 @@ margin_right = 30.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 60, 30 )
 rect_pivot_offset = Vector2( 20, 10 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 expand = true
 
-[node name="AttackLabel" type="Label" parent="Frame/UpAttack"]
+[node name="AttackLabel" type="Label" parent="Background/UpAttack"]
+self_modulate = Color( 0.384314, 0.427451, 0.662745, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1, 0 )
@@ -83,8 +70,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="DownAttack" type="TextureRect" parent="Frame"]
-self_modulate = Color( 0.753906, 0.499423, 0.138412, 1 )
+[node name="DownAttack" type="TextureRect" parent="Background"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -94,10 +80,11 @@ margin_top = -30.0
 margin_right = 30.0
 rect_min_size = Vector2( 60, 30 )
 rect_pivot_offset = Vector2( 20, 10 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 expand = true
 
-[node name="AttackLabel" type="Label" parent="Frame/DownAttack"]
+[node name="AttackLabel" type="Label" parent="Background/DownAttack"]
+self_modulate = Color( 0.384314, 0.427451, 0.662745, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1, 0 )
@@ -106,8 +93,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="RightAttack" type="TextureRect" parent="Frame"]
-self_modulate = Color( 0.753906, 0.499423, 0.138412, 1 )
+[node name="RightAttack" type="TextureRect" parent="Background"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -117,10 +103,11 @@ margin_top = -30.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 60 )
 rect_pivot_offset = Vector2( 20, 10 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 expand = true
 
-[node name="AttackLabel" type="Label" parent="Frame/RightAttack"]
+[node name="AttackLabel" type="Label" parent="Background/RightAttack"]
+self_modulate = Color( 0.384314, 0.427451, 0.662745, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1, 0 )
@@ -129,8 +116,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="LeftAttack" type="TextureRect" parent="Frame"]
-self_modulate = Color( 0.753906, 0.499423, 0.138412, 1 )
+[node name="LeftAttack" type="TextureRect" parent="Background"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -30.0
@@ -141,7 +127,8 @@ rect_pivot_offset = Vector2( 20, 10 )
 texture = ExtResource( 1 )
 expand = true
 
-[node name="AttackLabel" type="Label" parent="Frame/LeftAttack"]
+[node name="AttackLabel" type="Label" parent="Background/LeftAttack"]
+self_modulate = Color( 0.384314, 0.427451, 0.662745, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1, 0 )
@@ -149,3 +136,65 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 align = 1
 valign = 1
+
+[node name="Inner" type="Control" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -80.0
+margin_right = 80.0
+margin_bottom = 80.0
+
+[node name="Eggs" type="TextureRect" parent="Background/Inner"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+rect_rotation = 5.0
+rect_pivot_offset = Vector2( 20, 20 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="EggLabel" type="Label" parent="Background/Inner/Eggs"]
+self_modulate = Color( 0.588235, 0.552941, 0.482353, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="Health" type="TextureRect" parent="Background/Inner"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 38.0
+rect_rotation = -5.0
+rect_pivot_offset = Vector2( 19, 16 )
+texture = ExtResource( 9 )
+expand = true
+
+[node name="HealthLabel" type="Label" parent="Background/Inner/Health"]
+self_modulate = Color( 0.870588, 0.333333, 0.333333, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="CardArt" type="TextureRect" parent="Background/Inner"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -55.0
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 10 )
+expand = true

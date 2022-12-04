@@ -1,4 +1,5 @@
 extends Node
+class_name SceneHandler
 
 var scenes : Dictionary = {
 	"GameScene" : preload("res://Scenes/GameScene.tscn")

@@ -9,19 +9,55 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "BaseCard",
+"language": "GDScript",
+"path": "res://Scripts/BaseCard.gd"
+}, {
 "base": "Resource",
 "class": "Card",
 "language": "GDScript",
 "path": "res://Scripts/CustomResources/CardResource.gd"
 }, {
+"base": "TextureRect",
+"class": "CardSlot",
+"language": "GDScript",
+"path": "res://Scripts/CardSlot.gd"
+}, {
 "base": "Resource",
 "class": "Deck",
 "language": "GDScript",
 "path": "res://Scripts/CustomResources/DeckResource.gd"
+}, {
+"base": "Control",
+"class": "GameManager",
+"language": "GDScript",
+"path": "res://Scripts/GameManager.gd"
+}, {
+"base": "Node2D",
+"class": "PlacementManager",
+"language": "GDScript",
+"path": "res://Scripts/PlacementManager.gd"
+}, {
+"base": "Node",
+"class": "SceneHandler",
+"language": "GDScript",
+"path": "res://Scripts/SceneHandler.gd"
+}, {
+"base": "Node",
+"class": "TurnManager",
+"language": "GDScript",
+"path": "res://Scripts/TurnManager.gd"
 } ]
 _global_script_class_icons={
+"BaseCard": "",
 "Card": "",
-"Deck": ""
+"CardSlot": "",
+"Deck": "",
+"GameManager": "",
+"PlacementManager": "",
+"SceneHandler": "",
+"TurnManager": ""
 }
 
 [application]

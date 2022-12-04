@@ -1,6 +1,6 @@
 extends Node
 
 var card_database : Dictionary = {
-	"Goblin" : preload("res://Resources/Goblin.tres")
+	"Duck" : preload("res://Resources/Duck.tres")
 }
 

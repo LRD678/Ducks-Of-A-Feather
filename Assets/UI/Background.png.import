@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UpShadow.png-158583c23d1017bad6307f697c6e2f44.stex"
+path="res://.import/Background.png-28a29d840888e7e5437ee5fbebe80085.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/UpShadow.png"
-dest_files=[ "res://.import/UpShadow.png-158583c23d1017bad6307f697c6e2f44.stex" ]
+source_file="res://Assets/UI/Background.png"
+dest_files=[ "res://.import/Background.png-28a29d840888e7e5437ee5fbebe80085.stex" ]
 
 [params]
 
