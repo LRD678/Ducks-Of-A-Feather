@@ -4,7 +4,7 @@ class_name CardSlot
 export (Vector2) var placement_id
 
 var placement_manager
-var card = null
+var card : Control = null
 
 var surrounding_slots : Dictionary = {
 	"Up" : null,
@@ -16,6 +16,9 @@ var surrounding_slots : Dictionary = {
 func set_placement(_placement_manager):
 	placement_manager = _placement_manager
 	_set_neighbours()
+
+func set_card(child_index : int):
+	card = get_child(child_index)
 
 func _set_neighbours():
 	if placement_id.x >1:

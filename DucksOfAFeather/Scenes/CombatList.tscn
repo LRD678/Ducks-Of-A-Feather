@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Fonts/GlobalFont64.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Square.png" type="Texture" id=2]
+
+[node name="CombatList" type="TextureRect"]
+self_modulate = Color( 0.654902, 0.717647, 0.835294, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 416, 90 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="HBox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="Icon" type="TextureRect" parent="HBox"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 0 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="NameLabel" type="Label" parent="HBox"]
+margin_left = 84.0
+margin_top = 1.0
+margin_right = 406.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Card Name"
+align = 1
