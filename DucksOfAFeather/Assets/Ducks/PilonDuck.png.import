@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SkeletonWizard.png-b085ff16a5a8c03a9c631e560230f510.stex"
+path="res://.import/PilonDuck.png-fc56fc4b90c60dfd730c483a1dc8b7a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SkeletonWizard.png"
-dest_files=[ "res://.import/SkeletonWizard.png-b085ff16a5a8c03a9c631e560230f510.stex" ]
+source_file="res://Assets/Ducks/PilonDuck.png"
+dest_files=[ "res://.import/PilonDuck.png-fc56fc4b90c60dfd730c483a1dc8b7a4.stex" ]
 
 [params]
 

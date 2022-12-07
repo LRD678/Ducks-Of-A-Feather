@@ -1,6 +1,7 @@
 extends Resource
 class_name Card
 
+export (Texture) var card_art
 export (int, 0, 10) var eggs
 export (int) var health
 export (Dictionary) var attack_dictionary = {

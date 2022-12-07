@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AttackLabel.png-c6ddb2bbe91f99de1ec8154845027a3e.stex"
+path="res://.import/RightBorder.png-c343af184b74577fad98848a6e984a6f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/AttackLabel.png"
-dest_files=[ "res://.import/AttackLabel.png-c6ddb2bbe91f99de1ec8154845027a3e.stex" ]
+source_file="res://Assets/UI/RightBorder.png"
+dest_files=[ "res://.import/RightBorder.png-c343af184b74577fad98848a6e984a6f.stex" ]
 
 [params]
 

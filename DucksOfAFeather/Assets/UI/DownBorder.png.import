@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Left.png-ff768c68b2ca96e9146f929dcb13d56e.stex"
+path="res://.import/DownBorder.png-80b5daf23f2c3f118c1c1fbbde805556.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Left.png"
-dest_files=[ "res://.import/Left.png-ff768c68b2ca96e9146f929dcb13d56e.stex" ]
+source_file="res://Assets/UI/DownBorder.png"
+dest_files=[ "res://.import/DownBorder.png-80b5daf23f2c3f118c1c1fbbde805556.stex" ]
 
 [params]
 

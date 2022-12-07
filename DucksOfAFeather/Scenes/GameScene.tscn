@@ -133,7 +133,6 @@ margin_bottom = 966.0
 columns = 5
 
 [node name="CardSlot" parent="GamePlay/HBox/SlotGrid" instance=ExtResource( 4 )]
-self_modulate = Color( 0.654902, 0.717647, 0.835294, 1 )
 margin_right = 190.0
 margin_bottom = 190.0
 placement_id = Vector2( 1, 1 )

@@ -1,16 +1,16 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/CustomResources/CardResource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Ducks/DuckBase.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ducks/PilonDuck.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 card_art = ExtResource( 2 )
 eggs = 1
-health = 1
+health = 2
 attack_dictionary = {
-"Down": 1,
-"Left": 1,
-"Right": 1,
-"Up": 1
+"Down": 2,
+"Left": 2,
+"Right": 2,
+"Up": 2
 }

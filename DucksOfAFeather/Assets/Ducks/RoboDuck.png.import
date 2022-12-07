@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ArtFrame.png-b9a22738f396f9c07324c79ec5361ec4.stex"
+path="res://.import/RoboDuck.png-81a2fde372200ff340b69c4cbea6c7f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/ArtFrame.png"
-dest_files=[ "res://.import/ArtFrame.png-b9a22738f396f9c07324c79ec5361ec4.stex" ]
+source_file="res://Assets/Ducks/RoboDuck.png"
+dest_files=[ "res://.import/RoboDuck.png-81a2fde372200ff340b69c4cbea6c7f1.stex" ]
 
 [params]
 

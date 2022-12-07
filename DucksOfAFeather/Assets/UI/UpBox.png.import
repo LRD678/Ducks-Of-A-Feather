@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Duck.png-0686307039a7916aa71d87b463d1cc3e.stex"
+path="res://.import/UpBox.png-3507e00303da80e51bb344b2070de014.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Duck.png"
-dest_files=[ "res://.import/Duck.png-0686307039a7916aa71d87b463d1cc3e.stex" ]
+source_file="res://Assets/UI/UpBox.png"
+dest_files=[ "res://.import/UpBox.png-3507e00303da80e51bb344b2070de014.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Resource
 class_name Deck
 
-export (Dictionary) var deck_cards = {
-	"Card" : "Quantity"
-} 
+export (Array) var deck_cards = [
+	[6, "CARD"]
+]

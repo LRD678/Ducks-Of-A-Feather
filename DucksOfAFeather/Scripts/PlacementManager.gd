@@ -30,9 +30,11 @@ func spawn_cards():
 	for hand_card in 5:
 		var card_inst = card.instance()
 		hand1.add_child(card_inst)
+		card_inst.set_player(1)
 	for hand_card in 5:
 		var card_inst = card.instance()
 		hand2.add_child(card_inst)
+		card_inst.set_player(2)
 
 func _process(delta):
 	if held_card == null:
@@ -41,9 +43,10 @@ func _process(delta):
 			for selected_card in get_tree().get_nodes_in_group("Card"):
 				if selected_card.get_global_rect().has_point(get_global_mouse_position()):
 					if selected_card.has_been_placed == false:
-						held_card = selected_card
-						if held_card.eggs > Global.eggs:
-							held_card = null
+						if selected_card.player == Global.turn_player:
+							held_card = selected_card
+							if held_card.eggs > Global.eggs:
+								held_card = null
 	elif held_card != null:
 		#Moving the card to the mouse
 		held_card.rect_global_position = get_global_mouse_position() - (held_card.rect_size / 2)
